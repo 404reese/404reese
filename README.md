@@ -26,6 +26,14 @@
   <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=404reese&" alt="404reese" />
 </a>
 </p>
+<br>
+<div align="center">
+  <h2>🐍 My Contributions 🐍</h2>
+  <br>
+  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/salesp07/salesp07/output/github-contribution-grid-snake.svg" />
+  
+  <br/><br/><br/>
+</div>
 
 <br><br>
 <h3 align="left"><img src = "https://media1.giphy.com/media/JZ40cnfnN11KycrvMF/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = '60' /> Quote:</h3>
