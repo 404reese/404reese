@@ -4,14 +4,18 @@
 <p align="center">
   <img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" alt="Coder GIF" width="500">
 </p>
+
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ryo-ma&column=5&margin-w=15&margin-h=15" alt="profile-trophy" /></a> </p>
+
+
 <h3 align="left"><img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Developer.gif" width="80" /> About Me:</h3>
 
 <p>
-• 🧑‍🎓Pursuing bachelor’s degrees in Data Science and Statistics from IIT Madras and B.Tech degree in AI & DS from KJ Somaiya <br> 
-• <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Passionate about technology and its potential to shape the future
+• 🧑‍🎓  Pursuing bachelor’s degrees in Data Science and Statistics <br> 
+• <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">  Passionate about technology and its potential to shape the future
       <br>
-• 💬 Talk to me about cricket, python (both of these are not any kind of insect or animals)<br>
-• 🧑‍💻 Tech I work on :
+• 💬  Talk to me about cricket, python (both of these are not any kind of insect or animals)<br>
+• 🧑‍💻  Tech I work on :
 </p>
 
 <table align="center">
@@ -125,19 +129,8 @@
     <img src="https://img.shields.io/badge/Vercel-%23000000.svg?logo=vercel&logoColor=white" alt="vercel" />
   </a>
 </td>
-
-    </tr>
   </tbody>
 </table>
-
-<table align="center">
-  <thead align="center">
-    <tr align="center">
-      <!-- Headers -->
-      <td align="center">🎨 DESIGN </td>
-      <td align="center">⚙️ OTHERS</td>
-    </tr>
-  </thead>
 
 
 
