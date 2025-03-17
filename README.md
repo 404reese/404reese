@@ -165,4 +165,5 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Astonished%20Face.png" width="10%" alt="It's working but you don't know how!"/><br>
 </div>
+[![Riddhesh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=404reese&bg_color=ffffff&color=5e802b&line=3ec525&point=18653a&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 </div>
