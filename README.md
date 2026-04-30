@@ -1,8 +1,5 @@
 <h1 align="center">Hi, I`m Riddhesh ! <img src="https://user-images.githubusercontent.com/42378118/110234147-e3259600-7f4e-11eb-95be-0c4047144dea.gif" width="30"></h1>
 
-<p align="center">
-  <img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" alt="Coder GIF" width="500">
-</p>
 
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-trophies.vercel.app/?username=404reese&column=5&margin-w=15&margin-h=15&theme=darkhub" />
 </a> </p>
