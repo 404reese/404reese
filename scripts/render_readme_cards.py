@@ -26,6 +26,7 @@ ROLE = "FULL STACK AI DEVELOPER"
 FIRST_NAME, LAST_NAME = "Riddhesh", "Chaudhary"
 TAGLINE = ["I build AI systems that run in production:", "multi-agent LLM pipelines, RAG, data infra."]
 SITE_LABEL, SITE_URL = "riddhesh.me", "https://riddhesh.me/"
+PROJECTS_URL = "https://riddhesh.me/projects"  # where the What I Build panel links to
 TILES = [  # (file slug, small label, big title, sub line, url)
     ("portfolio", "PORTFOLIO", "riddhesh.me", "Projects, resume, writing", "https://riddhesh.me/"),
     ("linkedin", "LINKEDIN", "Let's connect", "in/riddheshchaudhary", "https://www.linkedin.com/in/riddheshchaudhary"),
@@ -41,7 +42,7 @@ SKILLS = [  # (title, items, icon file in scripts/icons/, tile tint) - same imag
     ("Databases & ORMs", "PostgreSQL, MySQL, MongoDB, Supabase, Neo4j, Redis, SQL, Prisma", "postgresql.svg", "#DBEAFE"),
     ("Cloud & DevOps", "GCP, AWS, Firebase, Cloudflare, Docker, Vercel, Nginx, Linux VPS, Git, CI/CD", "docker.svg", "#DBEAFE"),
 ]
-PROJECTS = [  # (preview file slug in assets/projects/, name, tags, description, link) - same as riddhesh.me
+PROJECTS = [  # (preview file slug in scripts/previews/, name, tags, description, link) - same as riddhesh.me
     ("axiomstation", "AxiomStation", ["Next.js", "FastAPI", "LiteLLM", "MCP"],
      "Autonomous no-code AI agent orchestrator. Describe a multi-agent workflow in plain English and watch it get built, deployed and traced.",
      "https://riddhesh.me/projects/axiomstation"),
@@ -54,18 +55,6 @@ PROJECTS = [  # (preview file slug in assets/projects/, name, tags, description,
     ("trash-tracker", "Smart Trash Tracker", ["IoT", "Flutter", "AWS", "MongoDB"],
      "Track submitted trash in real time and monitor waste collection with an intelligent tracking system.",
      "https://github.com/404reese"),
-    ("timelith", "Timelith", ["Java", "Next.js", "Supabase"],
-     "Automated timetable generator that simplifies scheduling for educational institutions.",
-     "https://timelith.vercel.app"),
-    ("lms", "Centralized LMS", ["Next.js", "MongoDB", "Supabase"],
-     "Web app giving students of my college centralized access to all resources, with over 2000 active users.",
-     "https://github.com/404reese"),
-    ("ai-video", "AI Video Generator", ["FastAPI", "Manim", "Token optimization"],
-     "A web application that generates explainer videos from text prompts using AI.",
-     "https://riddhesh.me/stemapp"),
-    ("transcript", "Transcript Generator", ["Flask", "Self-hosted", "Nginx"],
-     "Official web platform for automated academic transcript generation.",
-     "https://e-transcript.kjsit.org/"),
 ]
 
 # ───────────────────────── look (from riddhesh.me) ─────────────────────────
@@ -133,8 +122,14 @@ def d(seconds):
     return "" if STATIC else f' style="animation-delay:{seconds:.2f}s"'
 
 
-def svg(w, h, body, fonts, label, defs="", frame=True, fill=None):
+def svg(w, h, body, fonts, label, defs="", frame=True, fill=None, pad=0):
+    """Wrap a card. `pad` shrinks the content inside the white panel so it never touches the edge
+    (every card needs its own opaque panel: a transparent one is unreadable on GitHub's dark theme)."""
     css = font_css(fonts) + BASE_CSS + ("" if STATIC else MOTION_CSS)
+    if pad:
+        k = (w - 2 * pad) / w
+        body = f'<g transform="translate({pad} {pad + 4}) scale({k:.4f})">{body}</g>'
+        h = round(h * k + 2 * pad + 8)
     bg = (f'<rect x="4.5" y="6.5" width="{w - 9}" height="{h - 13}" rx="22" fill="{fill or PAPER}" stroke="{fill or LINE}"/>'
           if frame else "")
     return (
@@ -302,7 +297,7 @@ def know():
             f'<text class="b" x="{x + 106}" y="{y + 43}" font-size="16.5">{escape(title)}</text>{lines}</g>'
         )
     write("know.svg", svg(W, h, "".join(parts), ["pfib", "in", "inb"],
-                          "What I know: " + "; ".join(f"{t} ({i})" for t, i, *_ in SKILLS), frame=False))
+                          "What I know: " + "; ".join(f"{t} ({i})" for t, i, *_ in SKILLS), pad=24))
 
 
 def streaks(days):
@@ -399,31 +394,51 @@ def graph(data):
                            f"Contribution graph: {data['total']} contributions in the past year."))
 
 
-def projects():
-    """Caption card for each project. The moving previews are the .webp files in assets/projects/."""
-    w, h = 410, 132
+PREVIEWS = Path(__file__).resolve().parent / "previews"
+
+
+def build():
+    """'What I Build' as one panel: heading plus a 2-column grid of projects.
+
+    Each looping preview (.webp in scripts/previews/) is embedded as a data URI so the whole
+    section is a single image with a single white background.
+    """
+    col_w, gap, top = 402, 16, 128
+    pv_h = round(col_w * 400 / 640)
+    card_h, row_gap = pv_h + 126, 22
+    rows_n = (len(PROJECTS) + 1) // 2
+    h = top + rows_n * card_h + (rows_n - 1) * row_gap + 6
+    parts = [heading(14, 82, "What I", "Build", 66, 0.0)]
     for i, (slug, name, tags, desc, _url) in enumerate(PROJECTS):
+        x = 10 + (i % 2) * (col_w + gap)
+        y = top + (i // 2) * (card_h + row_gap)
+        uri = "data:image/webp;base64," + base64.b64encode((PREVIEWS / f"{slug}.webp").read_bytes()).decode()
         lines = "".join(
-            f'<text class="sub" x="8" y="{58 + j * 19}" font-size="13.5">{escape(l)}</text>'
-            for j, l in enumerate(wrap(desc, 58))
+            f'<text class="sub" x="{x + 4}" y="{y + pv_h + 58 + j * 19}" font-size="13.5">{escape(l)}</text>'
+            for j, l in enumerate(wrap(desc, 56))
         )
-        pills, px = [], 8
+        pills, px = [], x + 4
         for t in tags:
             pw = len(t) * 6.500 + 20
             pills.append(
-                f'<rect x="{px:.1f}" y="96" width="{pw:.1f}" height="24" rx="12" fill="{SOFT}" stroke="{LINE}"/>'
-                f'<text class="b" x="{px + pw / 2:.1f}" y="112" font-size="11" text-anchor="middle">{escape(t)}</text>'
+                f'<rect x="{px:.1f}" y="{y + pv_h + 94}" width="{pw:.1f}" height="24" rx="12" fill="{SOFT}" stroke="{LINE}"/>'
+                f'<text class="b" x="{px + pw / 2:.1f}" y="{y + pv_h + 110}" font-size="11" text-anchor="middle">{escape(t)}</text>'
             )
             px += pw + 6
-        body = f"""
-<g class="rise"{d(0.15 + (i % 2) * 0.1)}>
-<text class="ital" x="8" y="32" font-size="26" letter-spacing="-.300">{escape(name)}</text>
-<g class="nudge"><path d="M{w - 30} 28l12-12m-9 0h9v9" fill="none" stroke="{BLUE}" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></g>
-{lines}{"".join(pills)}
-</g>"""
-        write(f"project-{slug}.svg", svg(w, h, body, ["pfib", "in", "inb"], f"{name}: {desc}", frame=False))
-    for stale in ASSETS.glob("repo-*.svg"):  # left over from the old repo cards
-        try:
+        parts.append(
+            f'<g class="pop"{d(0.25 + i * 0.12)}>'
+            f'<rect x="{x}" y="{y}" width="{col_w}" height="{pv_h}" rx="19" fill="{SOFT}"/>'
+            f'<image x="{x}" y="{y}" width="{col_w}" height="{pv_h}" preserveAspectRatio="xMidYMid slice" href="{uri}"/>'
+            f'<rect x="{x}.5" y="{y}.5" width="{col_w - 1}" height="{pv_h - 1}" rx="19" fill="none" stroke="{LINE}"/>'
+            f'<text class="ital" x="{x + 4}" y="{y + pv_h + 34}" font-size="26" letter-spacing="-.300">{escape(name)}</text>'
+            f'<g class="nudge"><path d="M{x + col_w - 22} {y + pv_h + 30}l12-12m-9 0h9v9" fill="none" stroke="{BLUE}" '
+            f'stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></g>'
+            f'{lines}{"".join(pills)}</g>'
+        )
+    write("build.svg", svg(W, h, "".join(parts), ["pfib", "in", "inb"],
+                           "What I build: " + "; ".join(f"{n} ({ds})" for _s, n, _t, ds, _u in PROJECTS), pad=24))
+    for stale in list(ASSETS.glob("repo-*.svg")) + list(ASSETS.glob("project-*.svg")) + [ASSETS / "title-build.svg"]:
+        try:  # left over from earlier layouts
             stale.unlink()
         except OSError:
             pass
@@ -509,12 +524,12 @@ def trophies(data):
         parts.append(counter(f"{cx:.1f}", top + 172, value, "b", 17, t + 0.3, "middle"))
         said.append(f"{label.title()} {value} (rank {rank})")
     write("trophies.svg", svg(W, top + th + 16, "".join(parts), ["pfib", "in", "inb"],
-                              "Trophies: " + ", ".join(said), frame=False))
+                              "Trophies: " + ", ".join(said), pad=24))
     return True
 
 
 def title_card(name, plain, accent, label):
-    write(name, svg(W, 104, heading(14, 76, plain, accent, 62, 0.0), ["pfib"], label, frame=False))
+    write(name, svg(W, 104, heading(14, 76, plain, accent, 62, 0.0), ["pfib"], label, pad=24))
 
 
 def readme(has_trophies):
@@ -525,12 +540,10 @@ def readme(has_trophies):
 
     tile_w = {1: "60%", 2: "49%", 3: "32.5%"}.get(len(TILES), "32.5%")
     tile_row = row([(u, f"tile-{s}.svg", f"{l.title()}: {t}") for s, l, t, _sub, u in TILES], tile_w)
-    rows = []
-    for i in range(0, len(PROJECTS), 2):
-        pair = PROJECTS[i:i + 2]
-        rows.append(row([(u, f"projects/{sl}.webp", f"{n} preview") for sl, n, _t, _d, u in pair], "49%"))
-        rows.append(row([(u, f"project-{sl}.svg", f"{n}: {ds}") for sl, n, _t, ds, u in pair], "49%"))
-    repo_block = '\n  <img src="assets/title-build.svg" width="100%" alt="What I Build">\n' + "\n".join(rows) + "\n"
+    repo_block = (
+        f'\n  <a href="{PROJECTS_URL}"><img src="assets/build.svg" width="100%" alt="What I Build: '
+        + ", ".join(n for _s, n, *_ in PROJECTS) + '"></a>\n'
+    )
     trophy_block = (
         '\n  <img src="assets/trophies.svg" width="100%" alt="What I\'ve Earned: trophy ranks for commits, pull requests, '
         'issues, repositories, followers and stars">' if has_trophies else ""
@@ -552,9 +565,8 @@ def main():
     know()
     activity(data)
     graph(data)
-    title_card("title-build.svg", "What I", "Build", "What I Build")
     has_trophies = trophies(data)
-    projects()
+    build()
     readme(has_trophies)
     print(f"rendered {len(list(ASSETS.glob('*.svg')))} cards{' (static)' if STATIC else ''}")
 

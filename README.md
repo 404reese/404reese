@@ -8,21 +8,5 @@
   <img src="assets/activity.svg" width="100%" alt="What I Ship: contribution totals, streaks and monthly activity">
   <img src="assets/graph.svg" width="100%" alt="Contribution graph for the past year">
   <img src="assets/trophies.svg" width="100%" alt="What I've Earned: trophy ranks for commits, pull requests, issues, repositories, followers and stars">
-  <img src="assets/title-build.svg" width="100%" alt="What I Build">
-  <a href="https://riddhesh.me/projects/axiomstation"><img src="assets/projects/axiomstation.webp" width="49%" alt="AxiomStation preview"></a>
-  <a href="https://riddhesh.me/projects/override"><img src="assets/projects/override.webp" width="49%" alt="Override preview"></a>
-  <a href="https://riddhesh.me/projects/axiomstation"><img src="assets/project-axiomstation.svg" width="49%" alt="AxiomStation: Autonomous no-code AI agent orchestrator. Describe a multi-agent workflow in plain English and watch it get built, deployed and traced."></a>
-  <a href="https://riddhesh.me/projects/override"><img src="assets/project-override.svg" width="49%" alt="Override: An adversarial LLM council reviews your employment contract and a judge outside the council decides the verdict."></a>
-  <a href="https://clasicraft.in"><img src="assets/projects/clasicraft.webp" width="49%" alt="ClasiCraft preview"></a>
-  <a href="https://github.com/404reese"><img src="assets/projects/trash-tracker.webp" width="49%" alt="Smart Trash Tracker preview"></a>
-  <a href="https://clasicraft.in"><img src="assets/project-clasicraft.svg" width="49%" alt="ClasiCraft: A sleek, minimal e-commerce platform with advanced SEO and role-based employee access control."></a>
-  <a href="https://github.com/404reese"><img src="assets/project-trash-tracker.svg" width="49%" alt="Smart Trash Tracker: Track submitted trash in real time and monitor waste collection with an intelligent tracking system."></a>
-  <a href="https://timelith.vercel.app"><img src="assets/projects/timelith.webp" width="49%" alt="Timelith preview"></a>
-  <a href="https://github.com/404reese"><img src="assets/projects/lms.webp" width="49%" alt="Centralized LMS preview"></a>
-  <a href="https://timelith.vercel.app"><img src="assets/project-timelith.svg" width="49%" alt="Timelith: Automated timetable generator that simplifies scheduling for educational institutions."></a>
-  <a href="https://github.com/404reese"><img src="assets/project-lms.svg" width="49%" alt="Centralized LMS: Web app giving students of my college centralized access to all resources, with over 2000 active users."></a>
-  <a href="https://riddhesh.me/stemapp"><img src="assets/projects/ai-video.webp" width="49%" alt="AI Video Generator preview"></a>
-  <a href="https://e-transcript.kjsit.org/"><img src="assets/projects/transcript.webp" width="49%" alt="Transcript Generator preview"></a>
-  <a href="https://riddhesh.me/stemapp"><img src="assets/project-ai-video.svg" width="49%" alt="AI Video Generator: A web application that generates explainer videos from text prompts using AI."></a>
-  <a href="https://e-transcript.kjsit.org/"><img src="assets/project-transcript.svg" width="49%" alt="Transcript Generator: Official web platform for automated academic transcript generation."></a>
+  <a href="https://riddhesh.me/projects"><img src="assets/build.svg" width="100%" alt="What I Build: AxiomStation, Override, ClasiCraft, Smart Trash Tracker"></a>
 </div>
