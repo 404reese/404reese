@@ -30,7 +30,7 @@ PROJECTS_URL = "https://riddhesh.me/projects"  # where the What I Build panel li
 TILES = [  # (file slug, small label, big title, sub line, url)
     ("portfolio", "PORTFOLIO", "riddhesh.me", "Projects, resume, writing", "https://riddhesh.me/"),
     ("linkedin", "LINKEDIN", "Let's connect", "in/riddheshchaudhary", "https://www.linkedin.com/in/riddheshchaudhary"),
-    ("youtube", "YOUTUBE", "Watch me build", "@404reese", "https://youtube.com/@404reese"),
+    ("instagram", "INSTAGRAM", "Watch me build", "@unscripted.techies", "https://www.instagram.com/unscripted.techies/"),
 ]
 SKILLS = [  # (title, items, icon file in scripts/icons/, tile tint) - same images and tints as riddhesh.me
     ("AI & LLM Engineering", "Multi-agent systems, Eval, Harness, LangGraph, LangChain, MCP", "openai.svg", "#EFEFED"),

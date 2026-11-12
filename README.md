@@ -3,7 +3,7 @@
   <a href="https://riddhesh.me/"><img src="assets/hero.svg" width="100%" alt="Riddhesh Chaudhary, FULL STACK AI DEVELOPER. I build AI systems that run in production: multi-agent LLM pipelines, RAG, data infra."></a>
   <a href="https://riddhesh.me/"><img src="assets/tile-portfolio.svg" width="32.5%" alt="Portfolio: riddhesh.me"></a>
   <a href="https://www.linkedin.com/in/riddheshchaudhary"><img src="assets/tile-linkedin.svg" width="32.5%" alt="Linkedin: Let&#x27;s connect"></a>
-  <a href="https://youtube.com/@404reese"><img src="assets/tile-youtube.svg" width="32.5%" alt="Youtube: Watch me build"></a>
+  <a href="https://www.instagram.com/unscripted.techies/"><img src="assets/tile-instagram.svg" width="32.5%" alt="Instagram: Watch me build"></a>
   <img src="assets/know.svg" width="100%" alt="What I Know: AI and LLM engineering, RAG, machine learning, data engineering, Python, JavaScript, databases, cloud and DevOps">
   <img src="assets/activity.svg" width="100%" alt="What I Ship: contribution totals, streaks and monthly activity">
   <img src="assets/graph.svg" width="100%" alt="Contribution graph for the past year">
