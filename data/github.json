@@ -1,7 +1,7 @@
 {
  "login": "404reese",
- "generated": "2026-11-10T16:10:01+00:00",
- "total": 758,
+ "generated": "2026-11-14T12:28:44+00:00",
+ "total": 819,
  "days": [
   {
    "date": "2025-11-09",
@@ -1457,7 +1457,7 @@
   },
   {
    "date": "2026-11-07",
-   "count": 3
+   "count": 6
   },
   {
    "date": "2026-11-08",
@@ -1470,9 +1470,50 @@
   {
    "date": "2026-11-10",
    "count": 0
+  },
+  {
+   "date": "2026-11-11",
+   "count": 7
+  },
+  {
+   "date": "2026-11-12",
+   "count": 45
+  },
+  {
+   "date": "2026-11-13",
+   "count": 4
+  },
+  {
+   "date": "2026-11-14",
+   "count": 2
   }
  ],
+ "stats": {
+  "commits": 1390,
+  "stars": 33,
+  "followers": 60,
+  "prs": 51,
+  "issues": 31,
+  "repos": 100,
+  "since": 2023
+ },
  "repos": [
+  {
+   "name": "100DaysOfJava",
+   "description": "In this challenge, I'm committed to honing my Java programming skills by writing solutions from scratch without referring to any online sources or relying on assistance from chat bots. I believe in the power of self-learning and aim to document my thought process and journey as I tackle each challenge. You`ll find my though process in .md file",
+   "url": "https://github.com/404reese/100DaysOfJava",
+   "stars": 11,
+   "forks": 1,
+   "language": "Java"
+  },
+  {
+   "name": "ReactBootCamp",
+   "description": "",
+   "url": "https://github.com/404reese/ReactBootCamp",
+   "stars": 6,
+   "forks": 3,
+   "language": "JavaScript"
+  },
   {
    "name": "Real-Time-Crop-Health-Monitoring",
    "description": "AgriVision: AI-Powered Real-Time Crop Health Monitoring. Our AI-powered solution aims to revolutionize agriculture by detecting crop diseases early and providing sustainable, eco-friendly interventions, leading to healthier crops and reduced chemical usage.",
@@ -1482,33 +1523,25 @@
    "language": "HTML"
   },
   {
-   "name": "dsc-opencv",
+   "name": "Python-textbook",
+   "description": "This repository contains the source files for the IITM Python textbook. The textbook is intended to provide a comprehensive introduction to Python programming for students with little to no prior programming experience. It covers fundamental programming concepts, data structures, algorithms, and object-oriented programming.",
+   "url": "https://github.com/404reese/Python-textbook",
+   "stars": 2,
+   "forks": 0,
+   "language": "HTML"
+  },
+  {
+   "name": "IITM-python-course",
    "description": "",
-   "url": "https://github.com/404reese/dsc-opencv",
-   "stars": 1,
+   "url": "https://github.com/404reese/IITM-python-course",
+   "stars": 2,
    "forks": 0,
    "language": "Python"
   },
   {
-   "name": "404reese.github.io",
+   "name": "eval-llm",
    "description": "",
-   "url": "https://github.com/404reese/404reese.github.io",
-   "stars": 1,
-   "forks": 0,
-   "language": "CSS"
-  },
-  {
-   "name": "TheoremExplainAgent-open",
-   "description": "",
-   "url": "https://github.com/404reese/TheoremExplainAgent-open",
-   "stars": 1,
-   "forks": 0,
-   "language": "Python"
-  },
-  {
-   "name": "ML-projects",
-   "description": "",
-   "url": "https://github.com/404reese/ML-projects",
+   "url": "https://github.com/404reese/eval-llm",
    "stars": 1,
    "forks": 0,
    "language": "Jupyter Notebook"
@@ -1522,61 +1555,44 @@
    "language": "Jupyter Notebook"
   },
   {
-   "name": "eval-llm",
+   "name": "TheoremExplainAgent-open",
    "description": "",
-   "url": "https://github.com/404reese/eval-llm",
+   "url": "https://github.com/404reese/TheoremExplainAgent-open",
+   "stars": 1,
+   "forks": 0,
+   "language": "Python"
+  },
+  {
+   "name": "dsc-opencv",
+   "description": "",
+   "url": "https://github.com/404reese/dsc-opencv",
+   "stars": 1,
+   "forks": 0,
+   "language": "Python"
+  },
+  {
+   "name": "ML-projects",
+   "description": "",
+   "url": "https://github.com/404reese/ML-projects",
    "stars": 1,
    "forks": 0,
    "language": "Jupyter Notebook"
   },
   {
-   "name": "kfs-estate",
+   "name": "coming-soon",
    "description": "",
-   "url": "https://github.com/404reese/kfs-estate",
-   "stars": 0,
+   "url": "https://github.com/404reese/coming-soon",
+   "stars": 1,
    "forks": 0,
-   "language": "JavaScript"
+   "language": "HTML"
   },
   {
-   "name": "evolve-estate",
-   "description": "",
-   "url": "https://github.com/404reese/evolve-estate",
-   "stars": 0,
+   "name": "freecodecamp",
+   "description": "This repository contains my solutions to the challenges and projects required for obtaining certifications on FreeCodeCamp. Use these solutions as a reference to aid understanding and learning. Happy coding!",
+   "url": "https://github.com/404reese/freecodecamp",
+   "stars": 1,
    "forks": 0,
-   "language": "Python"
-  },
-  {
-   "name": "MasticalFS",
-   "description": "",
-   "url": "https://github.com/404reese/MasticalFS",
-   "stars": 0,
-   "forks": 0,
-   "language": "Dart"
-  },
-  {
-   "name": "timelith-v1",
-   "description": "",
-   "url": "https://github.com/404reese/timelith-v1",
-   "stars": 0,
-   "forks": 0,
-   "language": "TypeScript"
-  },
-  {
-   "name": "mastical-arvr",
-   "description": "",
-   "url": "https://github.com/404reese/mastical-arvr",
-   "stars": 0,
-   "forks": 2,
    "language": "JavaScript"
   }
- ],
- "stats": {
-  "commits": 1587,
-  "stars": 41,
-  "followers": 60,
-  "prs": 51,
-  "issues": 31,
-  "repos": 115,
-  "since": 2023
- }
+ ]
 }
